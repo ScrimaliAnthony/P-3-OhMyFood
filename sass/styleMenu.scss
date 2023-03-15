@@ -1,0 +1,525 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Shrikhand';
+    src: url(Shrikhand-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(Roboto-Regular.ttf);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto';
+}
+
+h1{
+    font-family: 'Shrikhand';
+}
+
+img{
+    object-fit: cover;
+}
+
+.textDecorationNone{
+    text-decoration: none;
+    color: black;
+}
+
+header{
+    width: 1400px;
+}
+
+.navigation{
+    display: flex;
+    width: 1400px;
+    height: 80px;
+    background-color: white;
+    z-index: 1;
+
+    .retour{
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        margin-left: 25px;
+    }
+
+    .headerLogo{
+        object-fit: contain;
+        width: 200px;
+        margin-left: 550px;
+    }
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    width: 1400px;
+    
+}
+
+.mainImage{
+    width: 900px;
+    height: 700px;
+    top: -17%;
+    position: absolute;
+    z-index: -1;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    margin-top: 450px;
+    width: 1400px;
+    border-radius: 35px 35px 0px 0px;
+    background-color: #f6f6f6;
+}
+
+.titreRestaurant{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+    height: 100px;
+
+    .nomRestaurant{
+        margin-left: 25px;
+    }
+
+    .coeur{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+
+        .coeurPlein{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            z-index: 2;
+            font-size: 25px;
+            opacity: 0;
+            background: -webkit-linear-gradient(172deg,#FF79DA, #9356DC );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        
+            &:hover{
+                animation-fill-mode: forwards;
+                animation-duration: 2s;
+                animation-name: animCoeur;
+        
+                @keyframes animCoeur {
+                    0% { opacity: 0; }
+                    10% { opacity: 0.1; }
+                    20% { opacity: 0.2; }
+                    30% { opacity: 0.3; }
+                    40% { opacity: 0.4; }
+                    50% { opacity: 0.5; }
+                    60% { opacity: 0.6; }
+                    70% { opacity: 0.7; }
+                    80% { opacity: 0.8; }
+                    90% { opacity: 0.9; }
+                    100% { opacity: 1; }
+                }
+            }
+        
+            &:hover + .coeurVide{
+                animation-duration: 2s;
+                animation-name: animCoeurEf;
+                animation-fill-mode: forwards;
+                
+                @keyframes animCoeurEf {
+                    0% { color: #000000;}
+                    50% { color: #ffffff;}
+                    100% { color: #ffffff;}
+                }
+            }
+        }
+
+        .coeurVide{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            z-index: 1;
+        }
+    }
+}
+
+
+.tousCarte{
+    display: flex;
+}
+
+.carte{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+
+    .type{
+        font-size: 1.2em;
+        width: 55px;
+        padding-bottom: 5px;
+        margin-right: 350px;
+        margin-bottom: 16px;
+        border-bottom: 4px solid #99E2D0;
+    }
+
+    .commande{
+        display: flex;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 420px;
+        height: 80px;
+        border-radius: 17px;
+        margin-bottom: 16px;
+        background-color: white;
+        box-shadow: 0px 3px 5px #ebebeb;
+        cursor: pointer;
+
+        &:hover > .JCP{
+            width: 300px;
+        }
+
+        &:hover > .coche{
+            margin-left: 25px;
+
+            .check{
+                animation: animCheck 1s;
+                animation-fill-mode: forwards;
+
+                @keyframes animCheck {
+                    0%{ transform: rotate(0deg);}
+                    100%{ transform: rotate(360deg);}
+                }
+            }
+        }
+
+        .JCP{
+            display: flex;
+            width: 400px;
+            margin-left: 15px;
+            transition: width 200ms linear;
+            
+            .info{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                overflow: hidden;
+                width: 350px;
+
+                .plat{
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-weight: bold;
+                    font-size: 1.3em;
+                    margin-bottom: 6px;
+
+                }
+
+                .ingredient{
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-size: 1.05em;
+                }
+            }
+
+            .prix{
+                display: flex;
+                align-items: flex-end;
+                font-weight: bold;
+                font-size: 1.1em;
+                margin-bottom: 14px;
+            }
+        }
+
+        .coche{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #99E2D0;
+            width: 80px;
+            min-width: 80px;
+            height: 80px;
+            margin-left: 55px;
+            transition: all 200ms linear;
+
+            .check{
+                font-size: 30px;
+                color: white;
+            }
+        }
+    }
+}
+
+
+
+.commande1{
+    opacity: 0;
+    animation: apparitionco1 2s;
+    animation-fill-mode: forwards;
+
+    @keyframes apparitionco1 {
+        0% { opacity:0; margin-top: 15px;}
+        100% { opacity:1; margin-top: 0px;}
+    }
+}
+
+.commande2{
+    opacity: 0;
+    animation: apparitionco2 2s;
+    animation-fill-mode: forwards;
+
+    @keyframes apparitionco2 {
+        0% { opacity:0; margin-top: 15px;}
+        20% { opacity:0;}
+        100% { opacity:1; margin-top: 0px;}
+    }
+}
+
+.commande3{
+    opacity: 0;
+    animation: apparitionco3 2s;
+    animation-fill-mode: forwards;
+
+    @keyframes apparitionco3 {
+        0% { opacity:0; margin-top: 15px;}
+        40% { opacity:0;}
+        100% { opacity:1; margin-top: 0px;}
+    }
+}
+
+.commande4{
+    opacity: 0;
+    animation: apparitionco4 2s;
+    animation-fill-mode: forwards;
+
+    @keyframes apparitionco4 {
+        0% { opacity:0; margin-top: 15px;}
+        60% { opacity:0;}
+        100% { opacity:1; margin-top: 0px;}
+    }
+}
+
+.divCommanderBTN{
+    display: flex;
+    align-items: center;
+    height: 120px;
+    margin-bottom: 70px;
+    margin-top: 15px;
+}
+
+.commanderBTN{
+    width: 250px;
+    height: 63px;
+    border-radius: 40px;
+    border: none;
+    background: linear-gradient(172deg,#FF79DA, #9356DC );
+    color: white;
+    font-size: 1.2em;
+}
+
+footer{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    background-color: #353535;
+    color: white;
+    width: 1400px;
+    height: 200px;
+}
+
+.footerLogo{
+    filter: invert(100%);
+    margin-left: 1250px;
+    margin-top: 100px;
+    width: 120px;
+}
+
+.footerTous{
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.3em;
+    height: 30px;
+    text-decoration: none;
+    width: 1400px;
+
+    .footerRestaurant{
+        display: flex;
+        justify-content: space-between;
+        width: 240px;
+
+        .footerRestaurantIcon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 17px;
+        }
+    }
+
+    .contact{
+        text-decoration: none;
+        color: white;
+    }
+
+    .footerPartenaire{
+        display: flex;
+        justify-content: space-between;
+        width: 197px;
+
+        .footerPartenaireIcon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 1525px) {
+       
+    header{
+        width: 700px;
+    }
+    
+    .navigation{
+        justify-content: space-between;
+        width: 700px;
+
+        .headerLogo{
+            margin-right: 260px;
+            margin-left: 0px;
+        }
+    }
+
+    main{
+        width: 700px;
+    }
+
+    .mainImage{
+        width: 700px;
+        height: 400px;
+        top: -5%;
+    }
+
+    .menu{
+        margin-top: 240px;
+        width: 700px;
+    }
+
+    .titreRestaurant{
+        width: 700px;
+    }
+
+
+    .tousCarte{
+        flex-direction: column;
+    }
+
+    .type2{
+        margin-top: 20px;
+    }
+
+    footer{
+        flex-direction: column;
+        width: 700px;
+        height: 240px;
+    }
+
+    .footerLogo{
+        margin-left: 30px;
+        margin-top: 0px;
+    }
+
+    .footerTous{
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 30px;
+        margin-bottom: 20px;
+        height: 130px;
+        text-decoration: none;
+        width: 700px;
+    }
+}
+
+
+@media screen and (max-width: 930px) {
+    
+    header{
+        width: 450px;
+    }
+
+    .navigation{
+        justify-content: space-between;
+        width: 450px;
+
+        .headerLogo{
+            margin-right: 120px;
+            margin-left: 0px;
+        }
+    }
+
+    main{
+        width: 450px;
+    }
+
+    .mainImage{
+        width: 450px;
+        height: 400px;
+        top: -5%;
+    }
+
+    .menu{
+        margin-top: 240px;
+        width: 450px;
+    }
+
+    .titreRestaurant{
+        width: 450px;
+    }
+
+
+    .tousCarte{
+        flex-direction: column;
+    }
+
+    .type2{
+        margin-top: 20px;
+    }
+
+    footer{
+        flex-direction: column;
+        width: 450px;
+        height: 240px;
+    }
+
+    .footerLogo{
+        margin-left: 30px;
+        margin-top: 0px;
+    }
+
+    .footerTous{
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 30px;
+        margin-bottom: 20px;
+        height: 130px;
+        text-decoration: none;
+        width: 450px;
+    }
+}

@@ -1,0 +1,831 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(Roboto-Regular.ttf);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto';
+    animation: scrolling 3s;
+
+    @keyframes scrolling{
+        0% { overflow: hidden;}
+        100% { overflow: hidden;}
+    }
+}
+
+
+@mixin carréTaille {
+    width: 20px;
+    height: 20px;
+}
+
+.loadingSpinner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    position: fixed;
+    top: 40%;
+    width: 70px;
+    height: 70px;
+    animation: carrétotal 3s;
+    animation-fill-mode: forwards;
+
+    @keyframes carrétotal{
+        0% { opacity: 1; z-index: 2;}
+        99% { opacity: 1; z-index: 2;}
+        100% { opacity: 0; z-index: -1;}
+    }
+
+    .carré1{
+        @include carréTaille;
+        background-color: #E470DA;
+        animation: carré1 3s;
+        animation-fill-mode: forwards;
+
+
+        @keyframes carré1 {
+            0% { opacity: 0}
+            14% { opacity: 0}
+            15% { opacity: 0.1}
+            16% { opacity: 0.2}
+            17% { opacity: 0.3}
+            18% { opacity: 0.4}
+            19% { opacity: 0.5}
+            20% { opacity: 0.6}
+            21% { opacity: 0.7}
+            22% { opacity: 0.8}
+            23% { opacity: 0.9}
+            24% { opacity: 1}
+            25% { opacity: 0.9}
+            26% { opacity: 0.8}
+            27% { opacity: 0.7}
+            28% { opacity: 0.6}
+            29% { opacity: 0.5}
+            30% { opacity: 0.4}
+            31% { opacity: 0.3}
+            32% { opacity: 0.2}
+            33% { opacity: 0.1}
+            34% { opacity: 0}
+            100% { opacity: 0;}
+        }
+    }
+
+    .carré2{
+        @include carréTaille;
+        background-color: #D76CDA;
+        animation: carré2 3s;
+        animation-fill-mode: forwards;
+
+
+        @keyframes carré2 {
+            0% { opacity: 0}
+            24% { opacity: 0}
+            25% { opacity: 0.1}
+            26% { opacity: 0.2}
+            27% { opacity: 0.3}
+            28% { opacity: 0.4}
+            29% { opacity: 0.5}
+            30% { opacity: 0.6}
+            31% { opacity: 0.7}
+            32% { opacity: 0.8}
+            33% { opacity: 0.9}
+            34% { opacity: 1}
+            35% { opacity: 0.9}
+            36% { opacity: 0.8}
+            37% { opacity: 0.7}
+            38% { opacity: 0.6}
+            39% { opacity: 0.5}
+            40% { opacity: 0.4}
+            41% { opacity: 0.3}
+            42% { opacity: 0.2}
+            43% { opacity: 0.1}
+            44% { opacity: 0}
+            100% { opacity: 0;}
+        }
+    }
+
+    .carré3{
+        @include carréTaille;
+        background-color: #CA67DA;
+        animation: carré3 3s;
+        animation-fill-mode: forwards;
+
+
+        @keyframes carré3 {
+            0% { opacity: 0}
+            34% { opacity: 0}
+            35% { opacity: 0.1}
+            36% { opacity: 0.2}
+            37% { opacity: 0.3}
+            38% { opacity: 0.4}
+            39% { opacity: 0.5}
+            40% { opacity: 0.6}
+            41% { opacity: 0.7}
+            42% { opacity: 0.8}
+            43% { opacity: 0.9}
+            44% { opacity: 1}
+            45% { opacity: 0.9}
+            46% { opacity: 0.8}
+            47% { opacity: 0.7}
+            48% { opacity: 0.6}
+            49% { opacity: 0.5}
+            50% { opacity: 0.4}
+            51% { opacity: 0.3}
+            52% { opacity: 0.2}
+            53% { opacity: 0.1}
+            54% { opacity: 0}
+            100% { opacity: 0;}
+        }
+    }
+
+    .carré4{
+        @include carréTaille;
+        background-color: #F174DA;
+        animation: carré4 3s;
+        animation-fill-mode: forwards;
+
+
+        @keyframes carré4 {
+            0% { opacity: 0}
+            4% { opacity: 0}
+            5% { opacity: 0.1}
+            6% { opacity: 0.2}
+            7% { opacity: 0.3}
+            8% { opacity: 0.4}
+            9% { opacity: 0.5}
+            10% { opacity: 0.6}
+            11% { opacity: 0.7}
+            12% { opacity: 0.8}
+            13% { opacity: 0.9}
+            14% { opacity: 1}
+            15% { opacity: 0.9}
+            16% { opacity: 0.8}
+            17% { opacity: 0.7}
+            18% { opacity: 0.6}
+            19% { opacity: 0.5}
+            20% { opacity: 0.4}
+            21% { opacity: 0.3}
+            22% { opacity: 0.2}
+            23% { opacity: 0.1}
+            24% { opacity: 0}
+            100% { opacity: 0;}
+        }
+    }
+
+    .carré5{
+        @include carréTaille;
+        background: linear-gradient(172deg,#FF79DA, #9356DC );
+        animation: carré5 3s;
+        animation-fill-mode: forwards;
+
+
+        @keyframes carré5 {
+            0% { opacity: 0}
+            74% { opacity: 0}
+            75% { opacity: 1; transform: scale(1);  transform: rotate(0deg);}
+            87% { transform: scale(2.5) rotate(380deg);}
+            100% { transform: scale(0);}
+        }
+    }
+
+    .carré6{
+        @include carréTaille;
+        background-color: #BD63DB;
+        animation: carré6 3s;
+        animation-fill-mode: forwards;
+
+
+        @keyframes carré6 {
+            0% { opacity: 0}
+            44% { opacity: 0}
+            45% { opacity: 0.1}
+            46% { opacity: 0.2}
+            47% { opacity: 0.3}
+            48% { opacity: 0.4}
+            49% { opacity: 0.5}
+            50% { opacity: 0.6}
+            51% { opacity: 0.7}
+            52% { opacity: 0.8}
+            53% { opacity: 0.9}
+            54% { opacity: 1}
+            55% { opacity: 0.9}
+            56% { opacity: 0.8}
+            57% { opacity: 0.7}
+            58% { opacity: 0.6}
+            59% { opacity: 0.5}
+            60% { opacity: 0.4}
+            61% { opacity: 0.3}
+            62% { opacity: 0.2}
+            63% { opacity: 0.1}
+            64% { opacity: 0}
+            100% { opacity: 0;}
+        }
+    }
+
+    .carré7{
+        @include carréTaille;
+        background-color: #FF79DA;
+        animation: carré7 3s;
+        animation-fill-mode: forwards;
+
+
+        @keyframes carré7 {
+            0% { opacity: 0}
+            1% { opacity: 0.1}
+            2% { opacity: 0.2}
+            3% { opacity: 0.3}
+            4% { opacity: 0.4}
+            5% { opacity: 0.5}
+            6% { opacity: 0.6}
+            7% { opacity: 0.7}
+            8% { opacity: 0.8}
+            9% { opacity: 0.9}
+            10% { opacity: 1}
+            11% { opacity: 0.9}
+            12% { opacity: 0.8}
+            13% { opacity: 0.7}
+            14% { opacity: 0.6}
+            15% { opacity: 0.5}
+            16% { opacity: 0.4}
+            17% { opacity: 0.3}
+            18% { opacity: 0.2}
+            19% { opacity: 0.1}
+            20% { opacity: 0}
+            100% { opacity: 0;}
+        }
+    }
+
+    .carré8{
+        @include carréTaille;
+        background-color: #A05ADB;
+        animation: carré8 3s;
+        animation-fill-mode: forwards;
+
+
+        @keyframes carré8 {
+            0% { opacity: 0}
+            64% { opacity: 0}
+            65% { opacity: 0.1}
+            66% { opacity: 0.2}
+            67% { opacity: 0.3}
+            68% { opacity: 0.4}
+            69% { opacity: 0.5}
+            70% { opacity: 0.6}
+            71% { opacity: 0.7}
+            72% { opacity: 0.8}
+            73% { opacity: 0.9}
+            74% { opacity: 1}
+            75% { opacity: 0.9}
+            76% { opacity: 0.8}
+            77% { opacity: 0.7}
+            78% { opacity: 0.6}
+            79% { opacity: 0.5}
+            80% { opacity: 0.4}
+            81% { opacity: 0.3}
+            82% { opacity: 0.2}
+            83% { opacity: 0.1}
+            84% { opacity: 0}
+            100% { opacity: 0;}
+        }
+    }
+
+    .carré9{
+        @include carréTaille;
+        background-color: #AF5FDB;
+        animation: carré9 3s;
+        animation-fill-mode: forwards;
+
+
+        @keyframes carré9 {
+            0% { opacity: 0}
+            54% { opacity: 0}
+            55% { opacity: 0.1}
+            56% { opacity: 0.2}
+            57% { opacity: 0.3}
+            58% { opacity: 0.4}
+            59% { opacity: 0.5}
+            60% { opacity: 0.6}
+            61% { opacity: 0.7}
+            62% { opacity: 0.8}
+            63% { opacity: 0.9}
+            64% { opacity: 1}
+            75% { opacity: 0.9}
+            66% { opacity: 0.8}
+            67% { opacity: 0.7}
+            68% { opacity: 0.6}
+            69% { opacity: 0.5}
+            70% { opacity: 0.4}
+            71% { opacity: 0.3}
+            72% { opacity: 0.2}
+            73% { opacity: 0.1}        
+            75% { opacity: 0}            
+            100% { opacity: 0;}
+        }
+    }
+}
+
+.loadingPage{
+    animation: flou 3s;
+
+    @keyframes flou{
+        0% { opacity: 0.2; z-index: 1;}
+        100% { opacity: 0.2; z-index: 1;}
+    }
+}
+
+img{
+    object-fit: cover;
+}
+
+.textDecorationNone{
+    text-decoration: none;
+    color: black;
+}
+
+.navAccueil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logoAccueil{
+        width: 150px;
+        height: auto;
+        padding-top: 20px;
+    }
+}
+
+.localisation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eaeaea;
+    width: 1400px;
+    height: 55px;
+
+
+    .loc{
+        padding-left: 15px;
+    }
+}
+
+.explorer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f6f6;
+    height: 350px;
+
+
+    .explorerTitre{
+        display: flex;
+        align-items: end ;
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 1.7em;
+    }
+
+    .explorerParag{
+        text-align: center;
+        font-size: 1.5em;
+        margin-bottom: 35px;
+    }
+
+    .explorerBouton{
+        width: 250px;
+        height: 60px;
+        border-radius: 40px;
+        border: none;
+        background: linear-gradient(172deg,#FF79DA, #9356DC );
+        color: white;
+        font-size: 1.2em;
+    }
+}
+
+.fonctionnement{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 1400px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+.fonctionnementTitre{
+    font-size: 2em;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+.fonctionnementTous{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.fonctionnementCarte{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f6f6;
+    width: 400px;
+    height: 80px;
+    border-radius: 20px;
+    margin-right: 15px;
+    box-shadow: 0px 3px 5px #ebebeb;
+
+    &:hover{
+        background-color: #f5edff;
+
+        .logoCouleur{
+            color: #9356DC;
+        }
+
+        .fonctionnemenBTN{
+            background-color: #f5edff;
+        }
+    }
+
+    .fonctionnemenNum{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #9356DC;
+        width: 30px;
+        height: 30px;
+        border-radius: 50px;
+        color: white;
+        position: absolute;
+        margin-right: 400px;
+    }
+
+    .fonctionnemenLogo{
+        font-size: 22px;
+        margin-right: 35px;
+
+    }
+
+    .fonctionnemenBTN{
+        display: flex;
+        border: none;
+        background-color: #f6f6f6;
+        font-weight: bold;
+        font-size: 1.2em;
+        width: 250px;
+    }
+}
+
+.restaurant{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f6f6;
+}
+
+.restaurantTitre{
+    font-size: 2em;
+    width: 200px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.restaurantTous{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: space-between;
+    width: 1200px;
+}
+
+.colone{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 650px;
+    margin-bottom: 30px;
+}
+
+.restaurantCarte{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 400px;
+    border-radius: 17px 17px 17px 17px;
+    box-shadow: 0px 3px 5px #ebebeb;
+
+    .nouveau{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 102px;
+        height: 37px;
+        background-color: #99E2D0;
+        color: green;
+        font-weight: bold;
+        font-size: 1.1em;
+        border-radius: 3px;
+        margin-left: 275px;
+        margin-top: 18px;
+        z-index: 100;
+        position: absolute;
+    }
+
+    .restaurantIMG{
+        width: 400px;
+        height: 200px;
+        border-radius: 17px 17px 0px 0px;
+    }
+
+    .restaurantInfo{
+        display: flex;
+        justify-content: space-between;
+        width: 400px;
+        height: 80px;
+
+        .restaurantInfoE{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 15px;
+            
+            .restaurantNom{
+                margin-bottom: 2px;
+                font-size: 1.1em;
+            }
+        
+            .restaurantLieu{
+                margin-top: 2px;
+                font-size: 1.1em;
+            }
+        }
+        
+        .coeur{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+
+            .coeurPlein{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                z-index: 2;
+                font-size: 25px;
+                color: #9356DC;
+                opacity: 0;
+                background: -webkit-linear-gradient(172deg,#FF79DA, #9356DC );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            
+                &:hover{
+                    animation-fill-mode: forwards;
+                    animation-duration: 2s;
+                    animation-name: animCoeur;
+            
+                    @keyframes animCoeur {
+                        0% { opacity: 0; }
+                        10% { opacity: 0.1; }
+                        20% { opacity: 0.2; }
+                        30% { opacity: 0.3; }
+                        40% { opacity: 0.4; }
+                        50% { opacity: 0.5; }
+                        60% { opacity: 0.6; }
+                        70% { opacity: 0.7; }
+                        80% { opacity: 0.8; }
+                        90% { opacity: 0.9; }
+                        100% { opacity: 1; }
+                    }
+                }
+            
+                &:hover + .coeurVide{
+                    animation-duration: 2s;
+                    animation-name: animCoeurEf;
+                    animation-fill-mode: forwards;
+                    
+                    @keyframes animCoeurEf {
+                        0% { color: #000000;}
+                        50% { color: #ffffff;}
+                        100% { color: #ffffff;}
+                    }
+                }
+            }
+
+            .coeurVide{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 25px;
+                z-index: 1;
+            }
+        }
+    }
+}
+
+footer{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    background-color: #353535;
+    color: white;
+    width: 1400px;
+    height: 200px;
+}
+
+.footerLogo{
+    filter: invert(100%);
+    margin-left: 1250px;
+    margin-top: 100px;
+    width: 120px;
+}
+
+.footerTous{
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.3em;
+    height: 30px;
+    text-decoration: none;
+    width: 1400px;
+
+    .footerRestaurant{
+        display: flex;
+        justify-content: space-between;
+        width: 240px;
+
+        .footerRestaurantIcon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 17px;
+        }
+    }
+
+    .contact{
+        text-decoration: none;
+        color: white;
+    }
+
+    .footerPartenaire{
+        display: flex;
+        justify-content: space-between;
+        width: 197px;
+
+        .footerPartenaireIcon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    
+    .localisation{
+        width: 900px;
+    }
+
+    .explorer{
+        width: 900px;
+
+    }
+
+    .fonctionnement{
+        width: 900px;
+
+    }
+
+    .fonctionnementTitre{
+        font-size: 1.6em;
+    }
+
+    .fonctionnementTous{
+        flex-direction: column;
+        justify-content: space-around;
+        height: 350px;
+    }
+    
+    .restaurantTous{
+        display: flex;
+        justify-content: space-evenly;
+        align-content: space-between;
+        width: 850px;
+    }
+
+    footer{
+        flex-direction: column;
+        width: 900px;
+        height: 240px;
+    }
+
+    .footerLogo{
+        margin-left: 30px;
+        margin-top: 0px;
+    }
+
+    .footerTous{
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 30px;
+        margin-bottom: 20px;
+        height: 130px;
+        text-decoration: none;
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 930px){
+
+    .localisation{
+        width: 450px;
+    }
+
+    .explorer{
+        width: 450px;
+
+    }
+
+    .fonctionnement{
+        width: 450px;
+
+    }
+
+    .fonctionnementTitre{
+        font-size: 1.6em;
+    }
+
+    .fonctionnementTous{
+        flex-direction: column;
+        justify-content: space-around;
+        height: 350px;
+    }
+
+    .colone{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 650px;
+        margin-bottom: 30px;
+    }
+
+    .restaurant{
+        height: 1360px;
+    }
+
+    .restaurantTitre{
+        font-size: 1.5em;
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-right: 200px;
+    }
+
+    .restaurantTous{
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 1250px;
+        width: 450px;
+    }
+
+    .colone{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 750px;
+        margin-bottom: 30px;
+    }
+
+    footer{
+        flex-direction: column;
+        width: 450px;
+        height: 240px;
+    }
+
+    .footerLogo{
+        margin-left: 30px;
+        margin-top: 0px;
+    }
+
+    .footerTous{
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 30px;
+        margin-bottom: 20px;
+        height: 130px;
+        text-decoration: none;
+        width: 450px;
+    }
+}
